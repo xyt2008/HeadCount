@@ -16,8 +16,8 @@ namespace HeadCount
     public class Startup
     {
         public static string ConnecrString;
-        public static int Num;
-        public static CancellationTokenSource ReadDataCancelToken=new CancellationTokenSource();
+
+
         
         public Startup(IHostingEnvironment env)
         {
@@ -43,7 +43,7 @@ namespace HeadCount
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
            ConnecrString= Configuration.GetConnectionString("SqlServer");
-           DataClass.Connect();
+    
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
